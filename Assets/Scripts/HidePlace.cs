@@ -1,41 +1,50 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HidePlace : MonoBehaviour
 {
-    public static int furnitureAmount = 0;
-    public int hideAmount = 0;
     public GameObject hidePlacePrefab;
 
     private void Awake ()
     {
-        for(int i=0 ; i<furnitureAmount ; i++ )
+        GameObject [] furniture = GameObject.FindGameObjectsWithTag( "furniture" );
+        int furnitureAmount = furniture.Length;
+        for (int i=0 ; i<furnitureAmount ; i++ )
         {
-            GameObject furniture = GameObject.Find( "furniture" + i );
-            if(Obstacle.canBlockLeft == true)
+            if( furniture[i].GetComponent<Obstacle>().canBlockLeft == true )
             {
-                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture.transform.position + new Vector3(  - ( furniture.transform.localScale.x / 2 ), 0, 0 ), Quaternion.identity );
-                hidePlace.transform.SetParent( furniture.transform );
-                hidePlace.transform.localScale = new Vector3( 1, furniture.transform.localScale.y, furniture.transform.localScale.z );
+                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture[i].transform.position + new Vector3(  -(furniture[i].transform.localScale.x/2), 0, 0 ), Quaternion.identity );
+                hidePlace.transform.SetParent( furniture[i].transform );
+                hidePlace.transform.localScale = new Vector3( 1, furniture[i].transform.localScale.y, furniture[i].transform.localScale.z );
             }
-            if ( Obstacle.canBlockRight== true )
+            if ( furniture[i].GetComponent<Obstacle>().canBlockRight == true )
             {
-                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture.transform.position + new Vector3( (furniture.transform.localScale.x / 2), 0, 0 ), Quaternion.identity );
-                hidePlace.transform.SetParent( furniture.transform );
-                hidePlace.transform.localScale = new Vector3( 1, furniture.transform.localScale.y, furniture.transform.localScale.z );
+                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture[i].transform.position + new Vector3( (furniture[i].transform.localScale.x / 2), 0, 0 ), Quaternion.identity );
+                hidePlace.transform.SetParent( furniture[i].transform );
+                hidePlace.transform.localScale = new Vector3( 1, furniture[i].transform.localScale.y, furniture[i].transform.localScale.z );
             }
-            if ( Obstacle.canBlockUp == true )
+            if ( furniture[i].GetComponent<Obstacle>().canBlockUp == true )
             {
-                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture.transform.position + new Vector3( 0, -(furniture.transform.localScale.y / 2), 0 ), Quaternion.identity );
-                hidePlace.transform.SetParent( furniture.transform );
-                hidePlace.transform.localScale = new Vector3( furniture.transform.localScale.x, 1, furniture.transform.localScale.z);
+                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture[i].transform.position + new Vector3( 0, -(furniture[i].transform.localScale.y / 2), 0 ), Quaternion.identity );
+                hidePlace.transform.SetParent( furniture[i].transform );
+                hidePlace.transform.localScale = new Vector3( furniture[i].transform.localScale.x, 1, furniture[i].transform.localScale.z);
             }
-            if ( Obstacle.canBlockForward == true )
+            if ( furniture [i].GetComponent<Obstacle>().canBlockDown == true )
             {
-                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture.transform.position + new Vector3( 0, 0, -( furniture.transform.localScale.z / 2 ) ), Quaternion.identity );
-                hidePlace.transform.SetParent( furniture.transform );
-                hidePlace.transform.localScale = new Vector3( furniture.transform.localScale.x, furniture.transform.localScale.y, 1 );
+                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture [i].transform.position + new Vector3( 0, (furniture [i].transform.localScale.y/2), 0 ), Quaternion.identity );
+                hidePlace.transform.SetParent( furniture [i].transform );
+                hidePlace.transform.localScale = new Vector3( furniture [i].transform.localScale.x, 1, furniture [i].transform.localScale.z );
+            }
+            if ( furniture[i].GetComponent<Obstacle>().canBlockForward == true )
+            {
+                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture[i].transform.position + new Vector3( 0, 0, -(furniture[i].transform.localScale.z/2) ), Quaternion.identity );
+                hidePlace.transform.SetParent( furniture[i].transform );
+                hidePlace.transform.localScale = new Vector3( furniture [i].transform.localScale.x, furniture [i].transform.localScale.y, 1 );
+            }
+            if ( furniture [i].GetComponent<Obstacle>().canBlockBackward == true )
+            {
+                GameObject hidePlace = Instantiate( hidePlacePrefab, furniture [i].transform.position + new Vector3( 0, 0, ( furniture [i].transform.localScale.z / 2 ) ), Quaternion.identity );
+                hidePlace.transform.SetParent( furniture [i].transform );
+                hidePlace.transform.localScale = new Vector3( furniture [i].transform.localScale.x, furniture [i].transform.localScale.y, 1 );
             }
         }
     }

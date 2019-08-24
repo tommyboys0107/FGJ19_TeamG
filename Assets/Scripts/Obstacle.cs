@@ -1,11 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 { 
-    public static bool canBlockLeft = false;
-    public static bool canBlockRight = false;
-    public static bool canBlockUp = false;
-    public static bool canBlockForward = false;
+    public bool canBlockLeft = false;
+    public bool canBlockRight = false;
+    public bool canBlockUp = false;
+    public bool canBlockDown = false;
+    public bool canBlockForward = false;
+    public bool canBlockBackward = false;
+    public int hideAmount = 0;
 }
