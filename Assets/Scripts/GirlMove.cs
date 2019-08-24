@@ -6,10 +6,12 @@ using System;
 public class GirlMove : MonoBehaviour
 {
     bool isWait;
+    bool isSit;
     public bool isCorner;
     Rigidbody rb;
     [SerializeField]
     float speed = 10;
+    Animator girlAnimation;
 
     System.Random crandom = new System.Random();
     int r;
@@ -17,13 +19,16 @@ public class GirlMove : MonoBehaviour
     void Start()
     {
         isWait = false;
+        isSit = false;
         rb = GetComponent<Rigidbody>();
+        girlAnimation = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isWait == false)
+        if (Input.GetKeyDown(KeyCode.Q)) { GoSit(); }
+        if (isWait == false && isSit == false)
         {
             //random
             r = crandom.Next(0, 2);
@@ -37,19 +42,20 @@ public class GirlMove : MonoBehaviour
                 GoDown();
                 print(r);
             }
-
         }
+        
     }
-    
     void GoUp()
     {
         rb.velocity = Vector3.zero;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, 0, 0f), 1f);
         rb.AddRelativeForce(Vector3.forward * speed);
         StartCoroutine(Wait(3f));
     }
     void GoDown()
     {
         rb.velocity = Vector3.zero;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f,180,0f), 1f);
         rb.AddRelativeForce(Vector3.forward * -speed);
         StartCoroutine(Wait(3f));
     }
@@ -57,5 +63,11 @@ public class GirlMove : MonoBehaviour
     IEnumerator Wait(float n) {
         yield return new WaitForSeconds(n);
         isWait = false;
+    }
+    void GoSit()
+    {
+        isSit = true;
+        rb.velocity = Vector3.zero;
+        girlAnimation.SetTrigger("sit"); 
     }
 }
