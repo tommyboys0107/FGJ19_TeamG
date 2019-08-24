@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections;
 using Rewired;
+using DG.Tweening;
 
 namespace CliffLeeCL
 {
@@ -60,6 +61,8 @@ namespace CliffLeeCL
         /// Decide whether the player can jump or not.
         /// </summary>
         public bool canJump = true;
+        public bool canSnapHidePlace = true;
+        public float snapDuration = 0.2f;
 
         /// <summary>
         /// Define where the checker should be relatively to player.
@@ -104,6 +107,8 @@ namespace CliffLeeCL
         /// Is used to get movement related data.
         /// </summary>
         PlayerStatus status;
+        GameObject nearbyObstacleObj = null;
+        GameObject currentHidePlaceObj = null;
         /// <summary>
         /// Is true when player is on the ground.
         /// </summary>
@@ -163,6 +168,29 @@ namespace CliffLeeCL
             }
         }
 
+        void OnTriggerStay(Collider col)
+        {
+            if (col.CompareTag("HidePlace"))
+            {
+                nearbyObstacleObj = col.transform.parent.gameObject;
+                currentHidePlaceObj = col.gameObject;
+            }
+        }
+
+        void OnTriggerExit(Collider col)
+        {
+
+            if (col.CompareTag("HidePlace"))
+            {
+                if (nearbyObstacleObj == col.transform.parent.gameObject)
+                {
+                    ReleaseHidePlace();
+                    nearbyObstacleObj = null;
+                    currentHidePlaceObj = null;
+                }
+            }
+        }
+
         /// <summary>
         /// The function is used to emit sprint effect paticle when the player is sprinting.
         /// </summary>
@@ -207,16 +235,48 @@ namespace CliffLeeCL
 
         void UpdateHide()
         {
-            if (player.GetButton("Hide"))
+            if (currentHidePlaceObj)
+            {
+                if (player.GetButtonDown("Hide"))
+                {
+                    OccupyHidePlace();
+                }
+                else if (player.GetButtonUp("Hide"))
+                {
+                    ReleaseHidePlace();
+                }
+            }
+        }
+
+        void OccupyHidePlace()
+        {
+            Obstacle nearbyObstacle = nearbyObstacleObj.GetComponent<Obstacle>();
+
+            if (nearbyObstacle.Occupy())
             {
                 isHidden = true;
                 animator.SetBool("hide", true);
+                if (canSnapHidePlace)
+                {
+                    transform.DOMove(currentHidePlaceObj.transform.position, snapDuration);
+                }
             }
-            else
+        }
+
+        void ReleaseHidePlace()
+        {
+            if (isHidden)
             {
+                Obstacle nearbyObstacle = nearbyObstacleObj.GetComponent<Obstacle>();
+                nearbyObstacle.Release();
                 isHidden = false;
                 animator.SetBool("hide", false);
             }
+        }
+
+        public HidePlace GetHidePlace()
+        {
+            return currentHidePlaceObj.GetComponent<HidePlace>();
         }
 
         /// <summary>

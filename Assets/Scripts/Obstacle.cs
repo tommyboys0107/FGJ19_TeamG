@@ -17,14 +17,16 @@ public class Obstacle : MonoBehaviour
     {
         if(occupied < hideAmount)
         {
+            print(occupied);
             occupied++;
+            print(occupied);
             return true;
         }
         return false;
     }
     public void Release() // call it when player leave a hide place
     {
-        occupied--;
+        occupied = Mathf.Min(occupied - 1, 0);
     }
 
     private void Awake ()
