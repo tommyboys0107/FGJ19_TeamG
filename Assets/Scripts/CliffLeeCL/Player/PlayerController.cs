@@ -116,6 +116,7 @@ namespace CliffLeeCL
         /// Is true when player drain his stamina.
         /// </summary>
         bool isDrained = false;
+        bool isHidden = false;
 
         /// <summary>
         /// Start is called once on the frame when a script is enabled.
@@ -140,6 +141,7 @@ namespace CliffLeeCL
         {
             UpdateSprintEffect();
             UpdateStamina();
+            UpdateHide();
             if (viewpointMode != Viewpoint.ThirdPersonFixed)
             {
                 UpdateCameraFOV();
@@ -152,10 +154,13 @@ namespace CliffLeeCL
         /// </summary>
         void FixedUpdate()
         {
-            UpdateMovement();
-            UpdateIsGrounded();
-            UpdateJump();
-            UpdateRotation();
+            if (!isHidden)
+            {
+                UpdateMovement();
+                UpdateIsGrounded();
+                UpdateJump();
+                UpdateRotation();
+            }
         }
 
         /// <summary>
@@ -197,6 +202,20 @@ namespace CliffLeeCL
                     status.currentStamina += status.staminaRecoveryPerSecond * Time.deltaTime;
                 else
                     status.currentStamina = status.maxStamina;
+            }
+        }
+
+        void UpdateHide()
+        {
+            if (player.GetButton("Hide"))
+            {
+                isHidden = true;
+                animator.SetBool("hide", true);
+            }
+            else
+            {
+                isHidden = false;
+                animator.SetBool("hide", false);
             }
         }
 
