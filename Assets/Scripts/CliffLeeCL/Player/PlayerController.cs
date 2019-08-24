@@ -99,6 +99,7 @@ namespace CliffLeeCL
         float sprintToNormalTime = 0.0f;
 
         Rigidbody rigid;
+        Animator animator;
         /// <summary>
         /// Is used to get movement related data.
         /// </summary>
@@ -127,6 +128,7 @@ namespace CliffLeeCL
             Assert.IsTrue(rigid, "Need \"Rigidbody\" component on this gameObject");
             status = GetComponent<PlayerStatus>();
             Assert.IsTrue(status, "Need \"PlayerStatus\" component on this gameObject");
+            animator = GetComponentInChildren<Animator>();
 
             status.currentStamina = status.maxStamina;
         }
@@ -298,7 +300,12 @@ namespace CliffLeeCL
                     }
                     rigid.MovePosition(newPosition);                 
                     isSprinting = false;
+                    animator.SetBool("move", true);
                 }
+            }
+            else
+            {
+                animator.SetBool("move", false);
             }
         }
 
