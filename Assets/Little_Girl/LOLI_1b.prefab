@@ -5293,7 +5293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690ea0146224b8b4694a1925dddeb352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Meta: {fileID: -7315188676014939519}
+  Meta: {fileID: 1209062274327502296}
 --- !u!114 &1095807361876098537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5306,8 +5306,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3869812175467a143ab9cd865752b4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Avatar: {fileID: 5595636549275649499}
-  Description: {fileID: 4486330125880930894}
+  Avatar: {fileID: 8391579855301702096}
+  Description: {fileID: -6085250122773104837}
 --- !u!95 &3176259201176845899
 Animator:
   serializedVersion: 3
@@ -7053,33 +7053,7 @@ MonoBehaviour:
   - Offset: {x: 0.035322454, y: 0.04210967, z: -0.01962785}
     Radius: 0.04945143
   m_gizmoColor: {r: 1, g: 0, b: 1, a: 1}
---- !u!114 &-7315188676014939519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63b589176a34b344b9ccbee2b7e7114a, type: 3}
-  m_Name: Meta
-  m_EditorClassIdentifier: 
-  ExporterVersion: UniVRM-0.44
-  Title: LOLI1
-  Version: .01
-  Author: Hayato
-  ContactInformation: 
-  Reference: 
-  Thumbnail: {fileID: 2800000, guid: 92950e58d59a3f144ab2a1693a0c185c, type: 3}
-  AllowedUser: 2
-  ViolentUssage: 0
-  SexualUssage: 0
-  CommercialUssage: 1
-  OtherPermissionUrl: 
-  LicenseType: 0
-  OtherLicenseUrl: 
---- !u!114 &4486330125880930894
+--- !u!114 &-6085250122773104837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7478,7 +7452,33 @@ MonoBehaviour:
     max: {x: 0, y: 0, z: 0}
     center: {x: 0, y: 0, z: 0}
     axisLength: 0
---- !u!90 &5595636549275649499
+--- !u!114 &1209062274327502296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b589176a34b344b9ccbee2b7e7114a, type: 3}
+  m_Name: Meta
+  m_EditorClassIdentifier: 
+  ExporterVersion: UniVRM-0.44
+  Title: LOLI1
+  Version: .01
+  Author: Hayato
+  ContactInformation: 
+  Reference: 
+  Thumbnail: {fileID: 2800000, guid: 92950e58d59a3f144ab2a1693a0c185c, type: 3}
+  AllowedUser: 2
+  ViolentUssage: 0
+  SexualUssage: 0
+  CommercialUssage: 1
+  OtherPermissionUrl: 
+  LicenseType: 0
+  OtherLicenseUrl: 
+--- !u!90 &8391579855301702096
 Avatar:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
