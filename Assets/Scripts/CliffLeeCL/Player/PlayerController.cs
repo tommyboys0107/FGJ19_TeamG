@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
 using System.Collections;
+using Rewired;
 
 namespace CliffLeeCL
 {
@@ -9,6 +10,11 @@ namespace CliffLeeCL
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
+
+        // Rewired.
+        public int playerID = 0;
+        private Player player;
+
         /// <summary>
         /// Define the viewpoint mode the class supports.
         /// </summary>
@@ -115,6 +121,8 @@ namespace CliffLeeCL
         /// </summary>
         void Start()
         {
+            player = ReInput.players.GetPlayer(playerID);
+
             rigid = GetComponent<Rigidbody>();
             Assert.IsTrue(rigid, "Need \"Rigidbody\" component on this gameObject");
             status = GetComponent<PlayerStatus>();
@@ -242,8 +250,8 @@ namespace CliffLeeCL
         /// </summary>
         private void UpdateMovement()
         {
-            float inputHorizontal = Input.GetAxis(horizontalAxisName);
-            float inputVertical = Input.GetAxis(verticalAxisName);
+            float inputHorizontal = player.GetAxis(horizontalAxisName);
+            float inputVertical = player.GetAxis(verticalAxisName);
 
             if (!Mathf.Approximately(inputHorizontal, 0.0f) || !Mathf.Approximately(inputVertical, 0.0f))
             {
@@ -284,7 +292,8 @@ namespace CliffLeeCL
 
                     if (viewpointMode == Viewpoint.ThirdPersonFixed)
                     {
-                        Quaternion newRotation = Quaternion.LookRotation((newPosition - rigid.position).normalized);
+                        Quaternion finalRotation = Quaternion.LookRotation((newPosition - rigid.position).normalized);
+                        Quaternion newRotation = Quaternion.RotateTowards(rigid.rotation, finalRotation, status.angularSpeed);
                         rigid.MoveRotation(newRotation);
                     }
                     rigid.MovePosition(newPosition);                 
