@@ -44,14 +44,14 @@ public class GirlMove : MonoBehaviour
     void GoUp()
     {
         rb.velocity = Vector3.zero;
-        rb.AddForce(Vector3.forward  * speed);
-        StartCoroutine(Wait(1f));
+        rb.AddRelativeForce(Vector3.forward * speed);
+        StartCoroutine(Wait(3f));
     }
     void GoDown()
     {
         rb.velocity = Vector3.zero;
-        rb.AddForce(Vector3.forward * -speed);
-        StartCoroutine(Wait(1f));
+        rb.AddRelativeForce(Vector3.forward * -speed);
+        StartCoroutine(Wait(3f));
     }
 
     IEnumerator Wait(float n) {
