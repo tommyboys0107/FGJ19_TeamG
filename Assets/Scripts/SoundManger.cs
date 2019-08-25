@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundManger : MonoBehaviour
 {
     public AudioClip[] se;
+    public AudioSource audioSE;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +17,8 @@ public class SoundManger : MonoBehaviour
     {
 
     }
-    public void PlaySound2D(int id, float volume)
+    public void PlaySound2D(int id)
     {
-        GameObject.FindWithTag("SE").GetComponent<AudioSource>().PlayOneShot(se[id], volume);
+        audioSE.PlayOneShot(se[id]);
     }
 }

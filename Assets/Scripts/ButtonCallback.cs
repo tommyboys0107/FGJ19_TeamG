@@ -17,6 +17,7 @@ public class ButtonCallback:MonoBehaviour
     //btn callback
     public void startButtonCallback ()
     {
+        GameObject.FindWithTag("SoundManager").SendMessage("PlaySound2D", 6);
         SceneManager.LoadScene( 1 );
         GameManager.gameState = GameManager.GameState.Playing;
     }

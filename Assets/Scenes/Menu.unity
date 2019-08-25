@@ -353,12 +353,12 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 723006406}
+        m_MethodName: startButtonCallback
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -790,6 +790,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7ad14591622b549128f7f6fe2465e429, type: 3}
   - {fileID: 8300000, guid: c8cfce94aa5f74b9696a6b0adfd92b37, type: 3}
   - {fileID: 8300000, guid: 153fcf8d6a76747a49b4931fc819ecfb, type: 3}
+  audioSE: {fileID: 1957523608}
 --- !u!4 &1389739009
 Transform:
   m_ObjectHideFlags: 0
