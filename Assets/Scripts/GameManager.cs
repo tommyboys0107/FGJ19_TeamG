@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Menu:
                 GameObject btnSelected = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
-                playImage.transform.position = btnSelected.transform.position + new Vector3( -130, 0, 0 );
+                playImage.transform.position = btnSelected.transform.position + new Vector3( -260, 0, 0 );
                 Time.timeScale = 1.0f;
                 break;
             case GameState.Playing:
