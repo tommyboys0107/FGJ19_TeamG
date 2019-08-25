@@ -6,8 +6,10 @@ using UnityEngine.EventSystems;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public GameObject playImage;
+
+    private float nextCheckTime = 2.0f;
+    private float period = 2.0f;
 
     public enum GameState
     {
@@ -38,9 +40,20 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 1.0f;
                 break;
             case GameState.Playing:
+                if ( Time.time > nextCheckTime )
+                {
+                    nextCheckTime += period;
+                    GameObject [] player = GameObject.FindGameObjectsWithTag( "Player" );
+                    if(player.Length <= 1)
+                    {
+                        gameState = GameState.GameOver;
+                    }
+                }
                 Time.timeScale = 1.0f;
                 break;
             case GameState.GameOver:
+                GameObject btnSelectedMain = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
+                playImage.transform.position = btnSelectedMain.transform.position + new Vector3( -100, 0, 0 );
                 Time.timeScale = 0f;
                 break;
         }

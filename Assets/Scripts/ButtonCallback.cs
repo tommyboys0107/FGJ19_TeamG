@@ -36,10 +36,4 @@ public class ButtonCallback:MonoBehaviour
         SceneManager.LoadScene( 0 );
         GameManager.gameState = GameManager.GameState.Menu;
     }
-
-    //temp
-    public void GAMEOVERButtonCallback ()
-    {
-        GameManager.gameState = GameManager.GameState.GameOver;
-    }
 }
