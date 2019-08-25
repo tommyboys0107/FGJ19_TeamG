@@ -9,7 +9,7 @@ public class GirlMove : MonoBehaviour
     public GameObject[] players;
     PlayerController [] playerController;
     HidePlace[] hidePlaces;
-    List<GameObject> grabee;
+    List<GameObject> grabee = new List<GameObject>();
     public Transform handPos;
 
     bool isWait;
@@ -94,17 +94,13 @@ public class GirlMove : MonoBehaviour
         girlAnimation.SetTrigger("sit"); 
     }
     void Grab() {
-        for (int i = 0; i <= playerController.Length; i++)
+        for (int i = 0; i < playerController.Length; i++)
         {
             hidePlaces[i]=playerController[i].GetHidePlace();
         }
-        //if player at position, get boolean name
-        for (int i = 0; i <= hidePlaces.Length; i++)
+        for (int i = 0; i < hidePlaces.Length; i++)
         {
-            if (hidePlaces[i].BlockForward == false)
-            {
-                grabee.Add(players[i]);
-            }
+            grabee.Add(players[i]);
         }
         garbr = crandom.Next(0, grabee.Count);
         handPos.position = grabee[garbr].transform.position;

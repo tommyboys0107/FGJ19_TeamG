@@ -858,6 +858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 491801682}
   - component: {fileID: 491801683}
+  - component: {fileID: 491801684}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -895,6 +896,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b81ca1c71b9118842952a7ce93a4d207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &491801684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491801681}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bb90477acf59f29468d9494b5e7d96ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &518754316
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1123,6 +1143,14 @@ PrefabInstance:
     - target: {fileID: 499097894, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TRW
       value: 0.5886200070381165
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310231770, guid: b925678a9f79b184dbbf825056e47356, type: 3}
+      propertyPath: Scroll.y
+      value: 3177.9985
+      objectReference: {fileID: 0}
+    - target: {fileID: 1310231770, guid: b925678a9f79b184dbbf825056e47356, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1955393102, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: m_IsActive
@@ -3879,7 +3907,7 @@ GameObject:
   - component: {fileID: 1222473293}
   - component: {fileID: 1222473292}
   m_Layer: 0
-  m_Name: Edge 3
+  m_Name: Edge 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3911,7 +3939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03087b7af7c77f4c93ffe22093d3818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  edgeNumber: 3
+  edgeNumber: 2
 --- !u!65 &1222473293
 BoxCollider:
   m_ObjectHideFlags: 0
