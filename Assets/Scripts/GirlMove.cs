@@ -9,6 +9,8 @@ public class GirlMove : MonoBehaviour
     public GameObject[] players;
     PlayerController [] playerController;
     HidePlace[] hidePlaces;
+    List<GameObject> grabee;
+    public Transform handPos;
 
     bool isWait;
     bool isSit;
@@ -21,7 +23,7 @@ public class GirlMove : MonoBehaviour
     Shake shake;
 
     System.Random crandom = new System.Random();
-    int r;
+    int r,garbr;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class GirlMove : MonoBehaviour
         shake = roomPos.GetComponent<Shake>();
         playerController = new PlayerController[players.Length];
         hidePlaces = new HidePlace[playerController.Length];
-        for (int i=0; i<=players.Length; i++)
+        for (int i=0; i<players.Length; i++)
         {
             playerController[i] = players[i].GetComponent<PlayerController>();
         }
@@ -42,6 +44,7 @@ public class GirlMove : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q)) { GoSit(); }
+        print(isSit);
         if (isWait == false && isSit == false)
         {
             //random
@@ -57,19 +60,20 @@ public class GirlMove : MonoBehaviour
                 print(r);
             }
         }
-        
+
+        Grab();
     }
     void GoUp()
     {
         rb.velocity = Vector3.zero;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, 0, 0f), 1f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f, 90, 0f), 1f);
         rb.AddRelativeForce(Vector3.forward * speed);
         StartCoroutine(Wait(3f));
     }
     void GoDown()
     {
         rb.velocity = Vector3.zero;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f,180,0f), 1f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0f,-90,0f), 1f);
         rb.AddRelativeForce(Vector3.forward * -speed);
         StartCoroutine(Wait(3f));
     }
@@ -94,5 +98,15 @@ public class GirlMove : MonoBehaviour
         {
             hidePlaces[i]=playerController[i].GetHidePlace();
         }
+        //if player at position, get boolean name
+        for (int i = 0; i <= hidePlaces.Length; i++)
+        {
+            if (hidePlaces[i].BlockForward == false)
+            {
+                grabee.Add(players[i]);
+            }
+        }
+        garbr = crandom.Next(0, grabee.Count);
+        handPos.position = grabee[garbr].transform.position;
     }
 }
