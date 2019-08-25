@@ -111,3 +111,4 @@ MonoBehaviour:
   BlockDown: 0
   BlockForward: 0
   BlockBackward: 0
+  hideAmount: 1

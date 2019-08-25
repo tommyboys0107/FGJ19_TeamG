@@ -251,9 +251,9 @@ namespace CliffLeeCL
 
         void OccupyHidePlace()
         {
-            Obstacle nearbyObstacle = nearbyObstacleObj.GetComponent<Obstacle>();
+            HidePlace hidePlace = currentHidePlaceObj.GetComponent<HidePlace>();
 
-            if (nearbyObstacle.Occupy())
+            if (hidePlace.Occupy())
             {
                 isHidden = true;
                 animator.SetBool("hide", true);
@@ -269,8 +269,8 @@ namespace CliffLeeCL
         {
             if (isHidden)
             {
-                Obstacle nearbyObstacle = nearbyObstacleObj.GetComponent<Obstacle>();
-                nearbyObstacle.Release();
+                HidePlace hidePlace = currentHidePlaceObj.GetComponent<HidePlace>();
+                hidePlace.Release();
                 isHidden = false;
                 animator.SetBool("hide", false);
             }

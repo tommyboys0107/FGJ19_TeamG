@@ -97,7 +97,7 @@ MonoBehaviour:
   canBlockUp: 0
   canBlockDown: 0
   canBlockForward: 1
-  canBlockBackward: 0
+  canBlockBackward: 1
   hideAmount: 1
   hidePlacePrefab: {fileID: 6110163792511212261, guid: ad59de1dc071b144c9096897a90ea52b,
     type: 3}

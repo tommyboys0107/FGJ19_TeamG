@@ -1473,11 +1473,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle
       objectReference: {fileID: 0}
-    - target: {fileID: 260904300629611569, guid: cdfbb94db1f1db84c9a297be1d79e681,
-        type: 3}
-      propertyPath: canBlockBackward
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 260904300629611570, guid: cdfbb94db1f1db84c9a297be1d79e681,
         type: 3}
       propertyPath: m_LocalPosition.x
