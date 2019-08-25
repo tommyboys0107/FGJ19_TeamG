@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Girl
+  - Obstacle
+  - HidePlace
   layers:
   - Default
   - TransparentFX
