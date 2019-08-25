@@ -187,6 +187,7 @@ namespace CliffLeeCL
                     ReleaseHidePlace();
                     nearbyObstacleObj = null;
                     currentHidePlaceObj = null;
+                    print("Exit");
                 }
             }
         }
@@ -258,7 +259,8 @@ namespace CliffLeeCL
                 animator.SetBool("hide", true);
                 if (canSnapHidePlace)
                 {
-                    transform.DOMove(currentHidePlaceObj.transform.position, snapDuration);
+                    Vector3 snapPosition = new Vector3(currentHidePlaceObj.transform.position.x, transform.position.y, currentHidePlaceObj.transform.position.z);
+                    transform.DOMove(snapPosition, snapDuration);
                 }
             }
         }

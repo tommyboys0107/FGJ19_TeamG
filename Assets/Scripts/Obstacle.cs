@@ -17,9 +17,7 @@ public class Obstacle : MonoBehaviour
     {
         if(occupied < hideAmount)
         {
-            print(occupied);
             occupied++;
-            print(occupied);
             return true;
         }
         return false;
@@ -33,51 +31,45 @@ public class Obstacle : MonoBehaviour
     {
         if ( gameObject.GetComponent<Obstacle>().canBlockLeft == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + new Vector3( -( gameObject.transform.localScale.x / 2 )-( hidePlacePrefab.transform.localScale.x/2), 0, 0 ), Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.left, Quaternion.identity );
             hidePlace.name = "hidePlace1";
             hidePlace.GetComponent<HidePlace>().BlockLeft = true;
             hidePlace.transform.SetParent(gameObject.transform );
-            hidePlace.transform.localScale = new Vector3( hidePlacePrefab.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z );
         }
         if (gameObject.GetComponent<Obstacle>().canBlockRight == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + new Vector3( ( gameObject.transform.localScale.x / 2 ) + ( hidePlacePrefab.transform.localScale.x / 2 ), 0, 0 ), Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.right, Quaternion.identity );
             hidePlace.name = "hidePlace2";
             hidePlace.GetComponent<HidePlace>().BlockRight = true;
             hidePlace.transform.SetParent( gameObject.transform );
-            hidePlace.transform.localScale = new Vector3( hidePlacePrefab.transform.localScale.x, gameObject.transform.localScale.y, gameObject.transform.localScale.z );
         }
         if (gameObject.GetComponent<Obstacle>().canBlockUp == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + new Vector3( 0, -( gameObject.transform.localScale.y / 2 ) - ( hidePlacePrefab.transform.localScale.y / 2 ), 0 ), Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.up, Quaternion.identity );
             hidePlace.name = "hidePlace3";
             hidePlace.GetComponent<HidePlace>().BlockUp = true;
             hidePlace.transform.SetParent( gameObject.transform );
-            hidePlace.transform.localScale = new Vector3( gameObject.transform.localScale.x, hidePlacePrefab.transform.localScale.y, gameObject.transform.localScale.z );
         }
         if ( gameObject.GetComponent<Obstacle>().canBlockDown == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + new Vector3( 0, ( gameObject.transform.localScale.y / 2 ) + ( hidePlacePrefab.transform.localScale.y / 2 ), 0 ), Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.down, Quaternion.identity);
             hidePlace.name = "hidePlace4";
             hidePlace.GetComponent<HidePlace>().BlockDown = true;
             hidePlace.transform.SetParent( gameObject.transform );
-            hidePlace.transform.localScale = new Vector3( gameObject.transform.localScale.x, hidePlacePrefab.transform.localScale.y, gameObject.transform.localScale.z );
         }
         if ( gameObject.GetComponent<Obstacle>().canBlockForward == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + new Vector3( 0, 0, -( gameObject.transform.localScale.z / 2 ) - ( hidePlacePrefab.transform.localScale.z / 2 ) ), Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.forward, Quaternion.identity );
             hidePlace.name = "hidePlace5";
             hidePlace.GetComponent<HidePlace>().BlockForward = true;
             hidePlace.transform.SetParent( gameObject.transform );
-            hidePlace.transform.localScale = new Vector3( gameObject.transform.localScale.x, gameObject.transform.localScale.y, hidePlacePrefab.transform.localScale.z );
         }
         if ( gameObject.GetComponent<Obstacle>().canBlockBackward == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + new Vector3( 0, 0, ( gameObject.transform.localScale.z / 2 ) + ( hidePlacePrefab.transform.localScale.z / 2 ) ) , Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.back, Quaternion.identity );
             hidePlace.name = "hidePlace6";
             hidePlace.GetComponent<HidePlace>().BlockBackward = true;
             hidePlace.transform.SetParent( gameObject.transform );
-            hidePlace.transform.localScale = new Vector3( gameObject.transform.localScale.x, gameObject.transform.localScale.y, hidePlacePrefab.transform.localScale.z );
         }
     }
 }
