@@ -7,6 +7,8 @@ public class ButtonCallback:MonoBehaviour
 {
     [SerializeField] private UnityEvent Onstart;
 
+    public GameObject rewiredInputManager;
+
     void Start ()
     {
         Onstart.Invoke();
@@ -22,6 +24,7 @@ public class ButtonCallback:MonoBehaviour
     {
         Application.Quit();
         Debug.Log( "Exit game!" );
+        rewiredInputManager.SetActive( false );
     }
     public void RestartButtonCallback ()
     {
