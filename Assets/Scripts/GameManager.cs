@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private float nextCheckTime = 2.0f;
     private float period = 2.0f;
+
+    public bool isStart= false;
 
     public enum GameState
     {
@@ -37,14 +40,19 @@ public class GameManager : MonoBehaviour
             case GameState.Menu:
                 GameObject btnSelected = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
                 playImage.transform.position = btnSelected.transform.position + new Vector3( -( btnSelected.transform.position.x * 5 / 10 ), 0, 0 );
+                isStart = false;
                 Time.timeScale = 1.0f;
                 break;
             case GameState.Playing:
                 if ( Time.time > nextCheckTime )
                 {
-                    nextCheckTime += period;
+                    nextCheckTime += period;  
                     GameObject [] player = GameObject.FindGameObjectsWithTag( "Player" );
-                    if(player.Length <= 1)
+                    if ( player.Length == 4 )
+                    {
+                        isStart = true;
+                    }
+                    if ( player.Length <= 1 && isStart == true)
                     {
                         gameState = GameState.GameOver;
                     }
