@@ -7,6 +7,9 @@ TagManager:
   - Girl
   - Obstacle
   - HidePlace
+  - SE
+  - BGM
+  - SoundManager
   layers:
   - Default
   - TransparentFX
