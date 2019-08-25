@@ -176,7 +176,7 @@ namespace CliffLeeCL
             {
                 nearbyObstacleObj = col.transform.parent.gameObject;
                 currentHidePlaceObj = col.gameObject;
-                if (!hideIcon.activeInHierarchy)
+                if (!isHidden && !hideIcon.activeInHierarchy)
                 {
                     hideIcon.SetActive(true);
                 }
@@ -266,6 +266,10 @@ namespace CliffLeeCL
             {
                 isHidden = true;
                 animator.SetBool("hide", true);
+                if (hideIcon.activeInHierarchy)
+                {
+                    hideIcon.SetActive(false);
+                }
                 if (canSnapHidePlace)
                 {
                     Vector3 snapPosition = new Vector3(currentHidePlaceObj.transform.position.x, transform.position.y, currentHidePlaceObj.transform.position.z);
@@ -282,6 +286,10 @@ namespace CliffLeeCL
                 hidePlace.Release();
                 isHidden = false;
                 animator.SetBool("hide", false);
+                if (!hideIcon.activeInHierarchy)
+                {
+                    hideIcon.SetActive(true);
+                }
             }
         }
 
