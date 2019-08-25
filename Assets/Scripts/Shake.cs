@@ -17,4 +17,8 @@ public class Shake : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.S))
             transform.DOShakePosition(1.0f,0.5f,999);
     }
+    public void Shaking()
+    {
+        transform.DOShakePosition(1.0f, 0.5f, 999);
+    }
 }
