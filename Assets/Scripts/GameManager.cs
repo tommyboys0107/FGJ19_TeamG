@@ -8,7 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject playImage;
 
-    //every period check if game over
     private float nextCheckTime = 2.0f;
     private float period = 2.0f;
 
@@ -18,7 +17,7 @@ public class GameManager : MonoBehaviour
         Playing,
         GameOver
     }
-    public static GameState gameState = GameState.Playing;
+    public static GameState gameState = GameState.Menu;
 
     void Awake ()
     {
@@ -45,7 +44,7 @@ public class GameManager : MonoBehaviour
                 {
                     nextCheckTime += period;
                     GameObject [] player = GameObject.FindGameObjectsWithTag( "Player" );
-                    if(player.Length == 4)
+                    if(player.Length <= 1)
                     {
                         gameState = GameState.GameOver;
                     }

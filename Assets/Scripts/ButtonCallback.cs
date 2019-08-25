@@ -7,6 +7,8 @@ public class ButtonCallback:MonoBehaviour
 {
     [SerializeField] private UnityEvent Onstart;
 
+    public GameObject rewiredInputManager;
+
     void Start ()
     {
         Onstart.Invoke();
@@ -15,15 +17,14 @@ public class ButtonCallback:MonoBehaviour
     //btn callback
     public void startButtonCallback ()
     {
-        GameObject.FindWithTag( "SE" ).GetComponent<SoundManger>().PlaySound2D( 5, 0.5f );
         SceneManager.LoadScene( 1 );
         GameManager.gameState = GameManager.GameState.Playing;
-        
     }
     public void exitButtonCallback ()
     {
         Application.Quit();
         Debug.Log( "Exit game!" );
+        rewiredInputManager.SetActive( false );
     }
     public void RestartButtonCallback ()
     {
