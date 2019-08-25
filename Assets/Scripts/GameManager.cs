@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour
         switch( gameState )
         {
             case GameState.Menu:
-                GameObject btnSelected = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
-                playImage.transform.position = btnSelected.transform.position + new Vector3( -( btnSelected.transform.position.x * 5 / 10 ), 0, 0 );
                 isStart = false;
                 Time.timeScale = 1.0f;
                 break;
@@ -57,12 +55,9 @@ public class GameManager : MonoBehaviour
                         gameState = GameState.GameOver;
                     }
                 }
-                Time.timeScale = 1.0f;
                 break;
             case GameState.GameOver:
-                GameObject btnSelectedMain = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
-                playImage.transform.position = btnSelectedMain.transform.position + new Vector3( -(btnSelectedMain.transform.position.x * 3 / 10), 0, 0 );
-                Time.timeScale = 0f;
+                isStart = false;
                 break;
         }
 
