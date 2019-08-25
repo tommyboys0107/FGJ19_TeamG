@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using CliffLeeCL;
 
 public class GirlMove : MonoBehaviour
 {
     public GameObject[] players;
+    PlayerController [] playerController;
+    HidePlace[] hidePlaces;
 
     bool isWait;
     bool isSit;
@@ -27,7 +30,12 @@ public class GirlMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         girlAnimation = GetComponent<Animator>();
         shake = roomPos.GetComponent<Shake>();
-
+        playerController = new PlayerController[players.Length];
+        hidePlaces = new HidePlace[playerController.Length];
+        for (int i=0; i<=players.Length; i++)
+        {
+            playerController[i] = players[i].GetComponent<PlayerController>();
+        }
     }
 
     // Update is called once per frame
@@ -82,6 +90,9 @@ public class GirlMove : MonoBehaviour
         girlAnimation.SetTrigger("sit"); 
     }
     void Grab() {
-
+        for (int i = 0; i <= playerController.Length; i++)
+        {
+            hidePlaces[i]=playerController[i].GetHidePlace();
+        }
     }
 }
