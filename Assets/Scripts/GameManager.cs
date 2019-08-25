@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Menu:
                 GameObject btnSelected = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
-                playImage.transform.position = btnSelected.transform.position + new Vector3( -260, 0, 0 );
+                playImage.transform.position = btnSelected.transform.position + new Vector3( -( btnSelected.transform.position.x * 5 / 10 ), 0, 0 );
                 Time.timeScale = 1.0f;
                 break;
             case GameState.Playing:
@@ -53,9 +53,14 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.GameOver:
                 GameObject btnSelectedMain = GameObject.Find( EventSystem.current.currentSelectedGameObject.name );
-                playImage.transform.position = btnSelectedMain.transform.position + new Vector3( -100, 0, 0 );
+                playImage.transform.position = btnSelectedMain.transform.position + new Vector3( -(btnSelectedMain.transform.position.x * 3 / 10), 0, 0 );
                 Time.timeScale = 0f;
                 break;
+        }
+
+        if(Input.GetKeyDown( "g" ))
+        {
+            gameState = GameState.GameOver;
         }
     }
 }
