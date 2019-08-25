@@ -5,6 +5,8 @@ using System;
 
 public class GirlMove : MonoBehaviour
 {
+    public GameObject[] players;
+
     bool isWait;
     bool isSit;
     public bool isCorner;
@@ -78,5 +80,8 @@ public class GirlMove : MonoBehaviour
         isSit = true;
         rb.velocity = Vector3.zero;
         girlAnimation.SetTrigger("sit"); 
+    }
+    void Grab() {
+
     }
 }
