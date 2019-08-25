@@ -17,21 +17,14 @@ public class EdgTrigger : MonoBehaviour
     {
         switch (edgeNumber) {
             case 1:
-                min = new Vector3(0, 180, 0);
-                max = new Vector3(0, 90, 0);
-                break;
-            case 2:
                 min = new Vector3(0, 90, 0);
-                max = new Vector3(0, 180, 0);
-                break;
-            case 3:
-                min = new Vector3(0, 180, 0);
                 max = new Vector3(0, -90, 0);
                 break;
-            case 4:
-                min = new Vector3(0, 0, 0);
+            case 2:
+                min = new Vector3(0, -90, 0);
                 max = new Vector3(0, 90, 0);
                 break;
+           
         }
     }
 
