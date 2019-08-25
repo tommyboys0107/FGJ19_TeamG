@@ -48,7 +48,7 @@ public class GirlMove : MonoBehaviour
     {
         time += Time.deltaTime; 
         timer = (int)time;
-        if (timer==5) {
+        if (timer>=5) {
             GoSit(); Grab();
             time = 0f;
             timer = 0;
