@@ -18,6 +18,6 @@ public class SoundManger : MonoBehaviour
     }
     public void PlaySound2D(int id, float volume)
     {
-        GameObject.FindWithTag("SE").GetComponent<AudioSource>().PlayOneShot(se[id], volume);
+        this.GetComponent<AudioSource>().PlayOneShot(se[id], volume);
     }
 }
