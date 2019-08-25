@@ -11,6 +11,7 @@ namespace CliffLeeCL
     /// </summary>
     public class PlayerController : MonoBehaviour
     {
+        public GameObject hideIcon = null;
 
         // Rewired.
         public int playerID = 0;
@@ -137,6 +138,7 @@ namespace CliffLeeCL
             animator = GetComponentInChildren<Animator>();
 
             status.currentStamina = status.maxStamina;
+            hideIcon.SetActive(false);
         }
 
         /// <summary>
@@ -174,6 +176,10 @@ namespace CliffLeeCL
             {
                 nearbyObstacleObj = col.transform.parent.gameObject;
                 currentHidePlaceObj = col.gameObject;
+                if (!hideIcon.activeInHierarchy)
+                {
+                    hideIcon.SetActive(true);
+                }
             }
         }
 
@@ -187,7 +193,10 @@ namespace CliffLeeCL
                     ReleaseHidePlace();
                     nearbyObstacleObj = null;
                     currentHidePlaceObj = null;
-                    print("Exit");
+                    if (hideIcon.activeInHierarchy)
+                    {
+                        hideIcon.SetActive(false);
+                    }
                 }
             }
         }
@@ -278,7 +287,11 @@ namespace CliffLeeCL
 
         public HidePlace GetHidePlace()
         {
-            return currentHidePlaceObj.GetComponent<HidePlace>();
+            if (currentHidePlaceObj)
+            {
+                return currentHidePlaceObj.GetComponent<HidePlace>();
+            }
+            return null;
         }
 
         /// <summary>
