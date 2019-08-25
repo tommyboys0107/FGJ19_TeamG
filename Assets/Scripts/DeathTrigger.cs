@@ -17,11 +17,8 @@ public class DeathTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Kill(other);
+        if(other.tag == "Player")
+        Destroy(other.gameObject,3f);
     }
 
-    IEnumerator Kill(Collider other) {
-        yield return new WaitForSeconds(3f);
-        Destroy(other);
-    }
 }

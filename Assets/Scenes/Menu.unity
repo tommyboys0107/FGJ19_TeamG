@@ -432,6 +432,7 @@ GameObject:
   - component: {fileID: 735246173}
   - component: {fileID: 735246172}
   - component: {fileID: 735246171}
+  - component: {fileID: 735246176}
   - component: {fileID: 735246175}
   m_Layer: 5
   m_Name: Canvas
@@ -551,6 +552,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &735246176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735246170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2478161daaf077e468c6095f5f4ccfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playImage: {fileID: 1684061445}
 --- !u!1 &1128908869
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,6 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playImage: {fileID: 1684061445}
+  isStart: 0
 --- !u!4 &1316227532
 Transform:
   m_ObjectHideFlags: 0
@@ -1250,7 +1265,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 8391579855301702096, guid: b925678a9f79b184dbbf825056e47356,
+      objectReference: {fileID: 7975048119042512622, guid: b925678a9f79b184dbbf825056e47356,
         type: 3}
     - target: {fileID: 5405165632669113249, guid: b925678a9f79b184dbbf825056e47356,
         type: 3}
