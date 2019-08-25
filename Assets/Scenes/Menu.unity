@@ -270,7 +270,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  rewiredInputManager: {fileID: 1085869713}
 --- !u!1 &723006401
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +420,6 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  rewiredInputManager: {fileID: 0}
 --- !u!1 &735246170
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,13 +551,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  rewiredInputManager: {fileID: 0}
---- !u!1 &1085869713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 213133380522848813, guid: bb4f16c403c7cc2468d2b24298f80443,
-    type: 3}
-  m_PrefabInstance: {fileID: 1476155305}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1128908869
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,7 +986,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -660}
+  m_AnchoredPosition: {x: 240, y: -840}
   m_SizeDelta: {x: 80, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1684061447
@@ -1070,8 +1061,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 510, y: -248}
-  m_SizeDelta: {x: 833.9, y: 296.28}
+  m_AnchoredPosition: {x: 600, y: -250}
+  m_SizeDelta: {x: 900, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1717055990
 MonoBehaviour:
