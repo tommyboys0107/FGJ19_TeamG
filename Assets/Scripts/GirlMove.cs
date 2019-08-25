@@ -43,7 +43,7 @@ public class GirlMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) { GoSit(); }
+        if (Input.GetKeyDown(KeyCode.Q)) { GoSit(); Grab(); }
         print(isSit);
         if (isWait == false && isSit == false)
         {
@@ -61,7 +61,7 @@ public class GirlMove : MonoBehaviour
             }
         }
 
-        Grab();
+        
     }
     void GoUp()
     {
@@ -104,5 +104,12 @@ public class GirlMove : MonoBehaviour
         }
         garbr = crandom.Next(0, grabee.Count);
         handPos.position = grabee[garbr].transform.position;
+        StartCoroutine(FlyToHand());
     }
+    IEnumerator FlyToHand() {
+        yield return new WaitForSeconds(5f);
+        Rigidbody r = grabee[garbr].GetComponent<Rigidbody>();
+        Vector3 dir = new Vector3(grabee[garbr].transform.position.x - transform.position.x, 10, grabee[garbr].transform.position.z - transform.position.z);
+        r.AddForce(-dir * 10000 * Time.deltaTime);
+    } 
 }

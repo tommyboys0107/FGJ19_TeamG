@@ -633,7 +633,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: Infinity
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -652,6 +652,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 1, z: 0.3}
   m_Center: {x: 0, y: 0.47, z: 0}
+--- !u!114 &222488814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222488801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9873ff1e59d78c4fbe930472896109a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  boxAni: {fileID: 491801684}
 --- !u!1 &274311645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,31 +1131,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 499097890, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TPX
-      value: -3.0344090461730957
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 499097890, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TPY
-      value: 16.69999885559082
+      value: 34.599998474121094
       objectReference: {fileID: 0}
     - target: {fileID: 499097890, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TPZ
-      value: 11.717309951782227
+      value: 17.55000114440918
       objectReference: {fileID: 0}
     - target: {fileID: 499097894, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TRX
-      value: 0.474151611328125
+      value: 0.411087304353714
       objectReference: {fileID: 0}
     - target: {fileID: 499097894, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TRY
-      value: 0.5143101215362549
+      value: 0.5949879288673401
       objectReference: {fileID: 0}
     - target: {fileID: 499097894, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TRZ
-      value: 0.4052059054374695
+      value: -0.4690617322921753
       objectReference: {fileID: 0}
     - target: {fileID: 499097894, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: TRW
-      value: 0.5886200070381165
+      value: -0.506929874420166
       objectReference: {fileID: 0}
     - target: {fileID: 1310231770, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: Scroll.y
@@ -1155,6 +1168,10 @@ PrefabInstance:
     - target: {fileID: 1955393102, guid: b925678a9f79b184dbbf825056e47356, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1955393104, guid: b925678a9f79b184dbbf825056e47356, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b925678a9f79b184dbbf825056e47356, type: 3}
