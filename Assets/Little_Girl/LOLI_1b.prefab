@@ -2342,6 +2342,8 @@ GameObject:
   - component: {fileID: 4915611914966869299}
   - component: {fileID: 1247162570577327477}
   - component: {fileID: 150673285}
+  - component: {fileID: 1405786982}
+  - component: {fileID: 1405786983}
   m_Layer: 0
   m_Name: J_Bip_C_Head
   m_TagString: Untagged
@@ -2356,7 +2358,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3036785384425361227}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.03838781, y: -1.7456754e-14, z: -0.000000405834, w: 0.9992629}
   m_LocalPosition: {x: -0.000000051448296, y: 0.037757277, z: 0.004866492}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2437,8 +2439,88 @@ MonoBehaviour:
   - {fileID: 486215001}
   - {fileID: 2011721652}
   - {fileID: 1322622894}
-  Joint: {fileID: 0}
-  Objectives: []
+  Joint: {fileID: 1405786983}
+  Objectives:
+  - {fileID: 1405786982}
+--- !u!114 &1405786982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036785384425361227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2576b795e2534cdbab732fca106cf79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 150673285}
+  Weight: 1
+  Target: {fileID: 1955393106}
+  TPX: 0.20999999344348907
+  TPY: 0.6919999718666077
+  TPZ: 0.35100001096725464
+  ViewingDirection: {x: 0, y: 0, z: 1}
+  MaximumError: 0.1
+--- !u!114 &1405786983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036785384425361227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 150673285}
+  X:
+    Joint: {fileID: 1405786983}
+    Enabled: 1
+    Constrained: 1
+    LowerLimit: -10
+    UpperLimit: 10
+    TargetValue: -4.400000095367432
+    CurrentValue: -4.400000095367432
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: 1, y: 4.5474735e-13, z: 0.00001057195}
+  Y:
+    Joint: {fileID: 1405786983}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: 0.000010485219, y: 0.12783033, z: -0.991796}
+  Z:
+    Joint: {fileID: 1405786983}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: -0.0000013514159, y: 0.991796, z: 0.12783033}
+  JointType: 0
+  Anchor: {x: 0, y: 0, z: 0}
+  Orientation: {x: 277.34424, y: -0.00060572836, z: 2.0382403e-10}
+  DPX: -0.000000051448296
+  DPY: 0.037757277
+  DPZ: 0.004866492
+  DRX: 0
+  DRY: 0
+  DRZ: 0
+  DRW: 1
 --- !u!1 &3051760442171613038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,8 +2958,8 @@ MonoBehaviour:
   - {fileID: 500825653}
   Root: {fileID: 1310231769}
   Solution: []
-  SelectedSegment: {fileID: 499097889}
-  Scroll: {x: 0, y: 3957.9985}
+  SelectedSegment: {fileID: 150673285}
+  Scroll: {x: 0, y: 900}
 --- !u!1 &3331772683046634972
 GameObject:
   m_ObjectHideFlags: 0
@@ -6402,9 +6484,9 @@ MonoBehaviour:
   Segment: {fileID: 499097889}
   Weight: 1
   Target: {fileID: 1955393106}
-  TPX: 0.27799999713897705
-  TPY: 1.2209999561309814
-  TPZ: 0.8560000061988831
+  TPX: 0.20999999344348907
+  TPY: 0.6919999718666077
+  TPZ: 0.35100001096725464
   MaximumError: 0.001
 --- !u!114 &499097891
 MonoBehaviour:
@@ -8073,6 +8155,7 @@ GameObject:
   - component: {fileID: 6997462470400857228}
   - component: {fileID: 6855978714951958045}
   - component: {fileID: 169562653}
+  - component: {fileID: 2080014150}
   m_Layer: 0
   m_Name: J_Bip_C_Neck
   m_TagString: Untagged
@@ -8087,7 +8170,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8135827641443034750}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.000000007385097, y: 0.08096975, z: -0.023592334}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -8128,8 +8211,67 @@ MonoBehaviour:
   Parent: {fileID: 1717518751}
   Childs:
   - {fileID: 150673285}
-  Joint: {fileID: 0}
+  Joint: {fileID: 2080014150}
   Objectives: []
+--- !u!114 &2080014150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8135827641443034750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 169562653}
+  X:
+    Joint: {fileID: 2080014150}
+    Enabled: 1
+    Constrained: 1
+    LowerLimit: -15
+    UpperLimit: 15
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: 1, y: 4.5474735e-13, z: 0.00001057195}
+  Y:
+    Joint: {fileID: 2080014150}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: 0.000010485219, y: 0.12783033, z: -0.991796}
+  Z:
+    Joint: {fileID: 2080014150}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: -0.0000013514159, y: 0.991796, z: 0.12783033}
+  JointType: 0
+  Anchor: {x: 0, y: 0, z: 0}
+  Orientation: {x: 277.34424, y: -0.00060572836, z: 2.0382403e-10}
+  DPX: 0.000000007385097
+  DPY: 0.08096975
+  DPZ: -0.023592334
+  DRX: 0
+  DRY: 0
+  DRZ: 0
+  DRW: 1
 --- !u!1 &8153488316885388621
 GameObject:
   m_ObjectHideFlags: 0
@@ -9041,6 +9183,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7870323653614637090}
   - component: {fileID: 484240421}
+  - component: {fileID: 1837404149}
   m_Layer: 0
   m_Name: J_Bip_C_Chest
   m_TagString: Untagged
@@ -9055,7 +9198,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8327347564435650672}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.000000011212251, y: 0.09068918, z: 0.008892631}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9080,8 +9223,67 @@ MonoBehaviour:
   Parent: {fileID: 1006773601}
   Childs:
   - {fileID: 1717518751}
-  Joint: {fileID: 0}
+  Joint: {fileID: 1837404149}
   Objectives: []
+--- !u!114 &1837404149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327347564435650672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 484240421}
+  X:
+    Joint: {fileID: 1837404149}
+    Enabled: 1
+    Constrained: 1
+    LowerLimit: -42.3
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: -1, y: -5.684342e-14, z: -0.0000008662521}
+  Y:
+    Joint: {fileID: 1837404149}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: -0.0000008612428, y: 0.10738659, z: 0.99421734}
+  Z:
+    Joint: {fileID: 1837404149}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: 0.0000000930238, y: 0.99421734, z: -0.10738659}
+  JointType: 0
+  Anchor: {x: 0, y: 0, z: 0}
+  Orientation: {x: 276.16467, y: 179.99995, z: -3.0328597e-11}
+  DPX: -0.000000011212251
+  DPY: 0.09068918
+  DPZ: 0.008892631
+  DRX: 0
+  DRY: 0
+  DRZ: 0
+  DRW: 1
 --- !u!1 &8354742416536678063
 GameObject:
   m_ObjectHideFlags: 0
@@ -11098,6 +11300,7 @@ GameObject:
   - component: {fileID: 3801391384363522280}
   - component: {fileID: 8047808302171281482}
   - component: {fileID: 1717518751}
+  - component: {fileID: 1896957375}
   m_Layer: 0
   m_Name: J_Bip_C_UpperChest
   m_TagString: Untagged
@@ -11112,7 +11315,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9195141217108633219}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.000000009102223, y: 0.08675355, z: -0.009370372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -11165,8 +11368,67 @@ MonoBehaviour:
   - {fileID: 169562653}
   - {fileID: 702829489}
   - {fileID: 1624479384}
-  Joint: {fileID: 0}
+  Joint: {fileID: 1896957375}
   Objectives: []
+--- !u!114 &1896957375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9195141217108633219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3531dc447309b4dfe8f7f4652bffd3fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Segment: {fileID: 1717518751}
+  X:
+    Joint: {fileID: 1896957375}
+    Enabled: 1
+    Constrained: 1
+    LowerLimit: -20
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: -1, y: -5.684342e-14, z: -0.0000008662521}
+  Y:
+    Joint: {fileID: 1896957375}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: -0.0000008612428, y: 0.10738659, z: 0.99421734}
+  Z:
+    Joint: {fileID: 1896957375}
+    Enabled: 0
+    Constrained: 1
+    LowerLimit: 0
+    UpperLimit: 0
+    TargetValue: 0
+    CurrentValue: 0
+    CurrentError: 0
+    CurrentVelocity: 0
+    CurrentAcceleration: 0
+    Axis: {x: 0.0000000930238, y: 0.99421734, z: -0.10738659}
+  JointType: 0
+  Anchor: {x: 0, y: 0, z: 0}
+  Orientation: {x: 276.16467, y: 179.99995, z: -3.0328597e-11}
+  DPX: 0.000000009102223
+  DPY: 0.08675355
+  DPZ: -0.009370372
+  DRX: 0
+  DRY: 0
+  DRZ: 0
+  DRW: 1
 --- !u!114 &-8649380135728404624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13719,7 +13981,7 @@ Avatar:
         m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    1796106265: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head/J_Adj_L_FaceEyeSet
+    1136130350: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_L_Shoulder/J_Bip_L_UpperArm/J_Bip_L_LowerArm/J_Bip_L_Hand/J_Bip_L_Thumb1/J_Bip_L_Thumb2/J_Bip_L_Thumb3/J_Bip_L_Thumb3_end
     795529479: Root/J_Bip_C_Hips/J_Bip_R_UpperLeg/J_Sec_R_SkirtBack
     2557469430: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_L_Shoulder/J_Bip_L_UpperArm/J_Bip_L_LowerArm/J_Bip_L_Hand
     465848799: Root/J_Bip_C_Hips/J_Bip_L_UpperLeg/J_Sec_L_SkirtFront1/J_Sec_L_SkirtFront2/J_Sec_L_SkirtFront2_end
@@ -13882,7 +14144,7 @@ Avatar:
     3214659867: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_L_Shoulder/J_Bip_L_UpperArm/J_Bip_L_LowerArm/J_Bip_L_Hand/J_Bip_L_Little1/J_Bip_L_Little2
     2292256054: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head/HairJoint-ef96ab0c-6631-4731-ac3b-6871cef831e3/HairJoint-5d5bf33a-cc47-4f40-88a3-cf353977a380
     1831842874: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head/HairJoint-3bc2fdb8-fcd7-4117-8fbc-f0ec28ec48f9
-    1136130350: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_L_Shoulder/J_Bip_L_UpperArm/J_Bip_L_LowerArm/J_Bip_L_Hand/J_Bip_L_Thumb1/J_Bip_L_Thumb2/J_Bip_L_Thumb3/J_Bip_L_Thumb3_end
+    1796106265: Root/J_Bip_C_Hips/J_Bip_C_Spine/J_Bip_C_Chest/J_Bip_C_UpperChest/J_Bip_C_Neck/J_Bip_C_Head/J_Adj_L_FaceEyeSet
   m_HumanDescription:
     serializedVersion: 3
     m_Human:
