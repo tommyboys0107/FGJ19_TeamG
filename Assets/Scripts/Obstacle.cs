@@ -13,44 +13,47 @@ public class Obstacle : MonoBehaviour
 
     private void Awake ()
     {
-        if ( gameObject.GetComponent<Obstacle>().canBlockLeft == true )
+        Obstacle obstacle = gameObject.GetComponent<Obstacle>();
+        BoxCollider boxCollider = gameObject.GetComponent<BoxCollider>();
+
+        if (obstacle.canBlockLeft == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.left, Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, boxCollider.bounds.center + new Vector3(boxCollider.bounds.extents.x + 0.5f, 0.0f, 0.0f), Quaternion.identity );
             hidePlace.name = "hidePlace1";
             hidePlace.GetComponent<HidePlace>().BlockLeft = true;
             hidePlace.transform.SetParent(gameObject.transform );
         }
-        if (gameObject.GetComponent<Obstacle>().canBlockRight == true )
+        if (obstacle.canBlockRight == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.right, Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, boxCollider.bounds.center - new Vector3(boxCollider.bounds.extents.x + 0.5f, 0.0f, 0.0f), Quaternion.identity );
             hidePlace.name = "hidePlace2";
             hidePlace.GetComponent<HidePlace>().BlockRight = true;
             hidePlace.transform.SetParent( gameObject.transform );
         }
-        if (gameObject.GetComponent<Obstacle>().canBlockUp == true )
+        if (obstacle.canBlockUp == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.up, Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, boxCollider.bounds.center + new Vector3(0.0f, boxCollider.bounds.extents.y + 0.5f, 0.0f), Quaternion.identity );
             hidePlace.name = "hidePlace3";
             hidePlace.GetComponent<HidePlace>().BlockUp = true;
             hidePlace.transform.SetParent( gameObject.transform );
         }
-        if ( gameObject.GetComponent<Obstacle>().canBlockDown == true )
+        if (obstacle.canBlockDown == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.down, Quaternion.identity);
+            GameObject hidePlace = Instantiate( hidePlacePrefab, boxCollider.bounds.center - new Vector3(0.0f, boxCollider.bounds.extents.y + 0.5f, 0.0f), Quaternion.identity);
             hidePlace.name = "hidePlace4";
             hidePlace.GetComponent<HidePlace>().BlockDown = true;
             hidePlace.transform.SetParent( gameObject.transform );
         }
-        if ( gameObject.GetComponent<Obstacle>().canBlockForward == true )
+        if (obstacle.canBlockForward == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.forward, Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, boxCollider.bounds.center + new Vector3(0.0f, 0.0f, boxCollider.bounds.extents.z + 0.5f), Quaternion.identity );
             hidePlace.name = "hidePlace5";
             hidePlace.GetComponent<HidePlace>().BlockForward = true;
             hidePlace.transform.SetParent( gameObject.transform );
         }
-        if ( gameObject.GetComponent<Obstacle>().canBlockBackward == true )
+        if (obstacle.canBlockBackward == true )
         {
-            GameObject hidePlace = Instantiate( hidePlacePrefab, gameObject.transform.position + Vector3.back, Quaternion.identity );
+            GameObject hidePlace = Instantiate( hidePlacePrefab, boxCollider.bounds.center - new Vector3(0.0f, 0.0f, boxCollider.bounds.extents.z + 0.5f), Quaternion.identity );
             hidePlace.name = "hidePlace6";
             hidePlace.GetComponent<HidePlace>().BlockBackward = true;
             hidePlace.transform.SetParent( gameObject.transform );
