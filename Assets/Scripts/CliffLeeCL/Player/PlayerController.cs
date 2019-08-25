@@ -2,6 +2,7 @@
 using UnityEngine.Assertions;
 using System.Collections;
 using Rewired;
+using DG.Tweening;
 
 namespace CliffLeeCL
 {
@@ -60,6 +61,8 @@ namespace CliffLeeCL
         /// Decide whether the player can jump or not.
         /// </summary>
         public bool canJump = true;
+        public bool canSnapHidePlace = true;
+        public float snapDuration = 0.2f;
 
         /// <summary>
         /// Define where the checker should be relatively to player.
@@ -104,6 +107,8 @@ namespace CliffLeeCL
         /// Is used to get movement related data.
         /// </summary>
         PlayerStatus status;
+        GameObject nearbyObstacleObj = null;
+        GameObject currentHidePlaceObj = null;
         /// <summary>
         /// Is true when player is on the ground.
         /// </summary>
@@ -116,6 +121,7 @@ namespace CliffLeeCL
         /// Is true when player drain his stamina.
         /// </summary>
         bool isDrained = false;
+        bool isHidden = false;
 
         /// <summary>
         /// Start is called once on the frame when a script is enabled.
@@ -140,6 +146,7 @@ namespace CliffLeeCL
         {
             UpdateSprintEffect();
             UpdateStamina();
+            UpdateHide();
             if (viewpointMode != Viewpoint.ThirdPersonFixed)
             {
                 UpdateCameraFOV();
@@ -152,10 +159,37 @@ namespace CliffLeeCL
         /// </summary>
         void FixedUpdate()
         {
-            UpdateMovement();
-            UpdateIsGrounded();
-            UpdateJump();
-            UpdateRotation();
+            if (!isHidden)
+            {
+                UpdateMovement();
+                UpdateIsGrounded();
+                UpdateJump();
+                UpdateRotation();
+            }
+        }
+
+        void OnTriggerStay(Collider col)
+        {
+            if (col.CompareTag("HidePlace"))
+            {
+                nearbyObstacleObj = col.transform.parent.gameObject;
+                currentHidePlaceObj = col.gameObject;
+            }
+        }
+
+        void OnTriggerExit(Collider col)
+        {
+
+            if (col.CompareTag("HidePlace"))
+            {
+                if (nearbyObstacleObj == col.transform.parent.gameObject)
+                {
+                    ReleaseHidePlace();
+                    nearbyObstacleObj = null;
+                    currentHidePlaceObj = null;
+                    print("Exit");
+                }
+            }
         }
 
         /// <summary>
@@ -198,6 +232,53 @@ namespace CliffLeeCL
                 else
                     status.currentStamina = status.maxStamina;
             }
+        }
+
+        void UpdateHide()
+        {
+            if (currentHidePlaceObj)
+            {
+                if (player.GetButtonDown("Hide"))
+                {
+                    OccupyHidePlace();
+                }
+                else if (player.GetButtonUp("Hide"))
+                {
+                    ReleaseHidePlace();
+                }
+            }
+        }
+
+        void OccupyHidePlace()
+        {
+            HidePlace hidePlace = currentHidePlaceObj.GetComponent<HidePlace>();
+
+            if (hidePlace.Occupy())
+            {
+                isHidden = true;
+                animator.SetBool("hide", true);
+                if (canSnapHidePlace)
+                {
+                    Vector3 snapPosition = new Vector3(currentHidePlaceObj.transform.position.x, transform.position.y, currentHidePlaceObj.transform.position.z);
+                    transform.DOMove(snapPosition, snapDuration);
+                }
+            }
+        }
+
+        void ReleaseHidePlace()
+        {
+            if (isHidden)
+            {
+                HidePlace hidePlace = currentHidePlaceObj.GetComponent<HidePlace>();
+                hidePlace.Release();
+                isHidden = false;
+                animator.SetBool("hide", false);
+            }
+        }
+
+        public HidePlace GetHidePlace()
+        {
+            return currentHidePlaceObj.GetComponent<HidePlace>();
         }
 
         /// <summary>

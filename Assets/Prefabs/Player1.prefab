@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 73446191510723506}
   - component: {fileID: 73446191510723507}
   - component: {fileID: 73446191510723508}
-  - component: {fileID: 73446191510723509}
   - component: {fileID: 73446191510723510}
   - component: {fileID: 73446191510723511}
   - component: {fileID: 73446191510723505}
+  - component: {fileID: 1789725967}
   m_Layer: 0
   m_Name: Player1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,19 +83,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &73446191510723509
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 73446191510723512}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &73446191510723510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +129,8 @@ MonoBehaviour:
   sprintKey: 304
   sprintEffect: {fileID: 0}
   canJump: 0
+  canSnapHidePlace: 1
+  snapDuration: 0.2
   checkerPositionOffset: {x: 0, y: 0, z: 0}
   checkerRadius: 0.1
   checkLayer:
@@ -164,8 +153,22 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!136 &1789725967
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 73446191510723512}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.65, z: 0}
 --- !u!1001 &73446191800079275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,11 +176,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 73446191510723506}
     m_Modifications:
-    - target: {fileID: 6803009001133385759, guid: 8a440914390e3254d8f671efdb767ad8,
-        type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 6803009001132962879, guid: 8a440914390e3254d8f671efdb767ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -232,6 +230,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6803009001133385759, guid: 8a440914390e3254d8f671efdb767ad8,
+        type: 3}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a440914390e3254d8f671efdb767ad8, type: 3}
