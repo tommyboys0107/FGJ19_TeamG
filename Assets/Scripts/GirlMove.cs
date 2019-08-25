@@ -12,6 +12,7 @@ public class GirlMove : MonoBehaviour
     [SerializeField]
     float speed = 10;
     Animator girlAnimation;
+    public Transform roomPos;
 
     System.Random crandom = new System.Random();
     int r;
@@ -22,6 +23,7 @@ public class GirlMove : MonoBehaviour
         isSit = false;
         rb = GetComponent<Rigidbody>();
         girlAnimation = GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -66,6 +68,11 @@ public class GirlMove : MonoBehaviour
     }
     void GoSit()
     {
+        Vector3 relativePos = roomPos.position - transform.position;
+
+        // the second argument, upwards, defaults to Vector3.up
+        Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+        transform.rotation = rotation;
         isSit = true;
         rb.velocity = Vector3.zero;
         girlAnimation.SetTrigger("sit"); 

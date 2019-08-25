@@ -822,7 +822,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 690ea0146224b8b4694a1925dddeb352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Meta: {fileID: 7105940157569536702}
+  Meta: {fileID: 7241035946522478677}
 --- !u!114 &2529869898790938050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -835,8 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3869812175467a143ab9cd865752b4a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Avatar: {fileID: -1630126810291046911}
-  Description: {fileID: 2146317968991480508}
+  Avatar: {fileID: -982181772914158920}
+  Description: {fileID: -5532122446540911953}
 --- !u!95 &4064999482054970268
 Animator:
   serializedVersion: 3
@@ -846,7 +846,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675743369793501435}
   m_Enabled: 1
-  m_Avatar: {fileID: -1630126810291046911}
+  m_Avatar: {fileID: -982181772914158920}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -7053,7 +7053,406 @@ Transform:
   m_Father: {fileID: 5286161995399042369}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!90 &-1630126810291046911
+--- !u!114 &-5532122446540911953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 976e99d37c093ce4c9b249c81c2cbdd5, type: 3}
+  m_Name: AvatarDescription
+  m_EditorClassIdentifier: 
+  armStretch: 0.05
+  legStretch: 0.05
+  upperArmTwist: 0.5
+  lowerArmTwist: 0.5
+  upperLegTwist: 0.5
+  lowerLegTwist: 0.5
+  feetSpacing: 0
+  hasTranslationDoF: 0
+  human:
+  - humanBone: 0
+    boneName: J_Bip_C_Hips
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 1
+    boneName: J_Bip_L_UpperLeg
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 2
+    boneName: J_Bip_R_UpperLeg
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 3
+    boneName: J_Bip_L_LowerLeg
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 4
+    boneName: J_Bip_R_LowerLeg
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 5
+    boneName: J_Bip_L_Foot
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 6
+    boneName: J_Bip_R_Foot
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 7
+    boneName: J_Bip_C_Spine
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 8
+    boneName: J_Bip_C_Chest
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 9
+    boneName: J_Bip_C_Neck
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 10
+    boneName: J_Bip_C_Head
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 11
+    boneName: J_Bip_L_Shoulder
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 12
+    boneName: J_Bip_R_Shoulder
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 13
+    boneName: J_Bip_L_UpperArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 14
+    boneName: J_Bip_R_UpperArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 15
+    boneName: J_Bip_L_LowerArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 16
+    boneName: J_Bip_R_LowerArm
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 17
+    boneName: J_Bip_L_Hand
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 18
+    boneName: J_Bip_R_Hand
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 19
+    boneName: J_Bip_L_ToeBase
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 20
+    boneName: J_Bip_R_ToeBase
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 21
+    boneName: J_Adj_L_FaceEye
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 22
+    boneName: J_Adj_R_FaceEye
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 24
+    boneName: J_Bip_L_Thumb1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 25
+    boneName: J_Bip_L_Thumb2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 26
+    boneName: J_Bip_L_Thumb3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 27
+    boneName: J_Bip_L_Index1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 28
+    boneName: J_Bip_L_Index2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 29
+    boneName: J_Bip_L_Index3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 30
+    boneName: J_Bip_L_Middle1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 31
+    boneName: J_Bip_L_Middle2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 32
+    boneName: J_Bip_L_Middle3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 33
+    boneName: J_Bip_L_Ring1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 34
+    boneName: J_Bip_L_Ring2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 35
+    boneName: J_Bip_L_Ring3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 36
+    boneName: J_Bip_L_Little1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 37
+    boneName: J_Bip_L_Little2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 38
+    boneName: J_Bip_L_Little3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 39
+    boneName: J_Bip_R_Thumb1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 40
+    boneName: J_Bip_R_Thumb2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 41
+    boneName: J_Bip_R_Thumb3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 42
+    boneName: J_Bip_R_Index1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 43
+    boneName: J_Bip_R_Index2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 44
+    boneName: J_Bip_R_Index3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 45
+    boneName: J_Bip_R_Middle1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 46
+    boneName: J_Bip_R_Middle2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 47
+    boneName: J_Bip_R_Middle3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 48
+    boneName: J_Bip_R_Ring1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 49
+    boneName: J_Bip_R_Ring2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 50
+    boneName: J_Bip_R_Ring3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 51
+    boneName: J_Bip_R_Little1
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 52
+    boneName: J_Bip_R_Little2
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 53
+    boneName: J_Bip_R_Little3
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+  - humanBone: 54
+    boneName: J_Bip_C_UpperChest
+    useDefaultValues: 1
+    min: {x: 0, y: 0, z: 0}
+    max: {x: 0, y: 0, z: 0}
+    center: {x: 0, y: 0, z: 0}
+    axisLength: 0
+--- !u!90 &-982181772914158920
 Avatar:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8577,8 +8976,8 @@ Avatar:
                 m_Max: {x: 0, y: 0.34906584, z: 0.2617994}
               m_Length: 0.1
               m_Type: 1
-            - m_PreQ: {x: 0.030472713, y: 0.0026061467, z: 0.9958967, w: -0.08517302}
-              m_PostQ: {x: 0.030472713, y: 0.0026061467, z: 0.9958967, w: -0.08517302}
+            - m_PreQ: {x: 0.030472713, y: 0.0026061465, z: 0.9958967, w: -0.08517301}
+              m_PostQ: {x: 0.030472713, y: 0.0026061465, z: 0.9958967, w: -0.08517301}
               m_Sgn: {x: 1, y: 1, z: -1}
               m_Limit:
                 m_Min: {x: 0, y: -0.2617994, z: -0.2617994}
@@ -8705,8 +9104,8 @@ Avatar:
                 m_Max: {x: 0, y: 0, z: 0.7853982}
               m_Length: 0.007099771
               m_Type: 1
-            - m_PreQ: {x: 0.27423608, y: 0.6203512, z: 0.5684351, w: -0.46566153}
-              m_PostQ: {x: 0.27643943, y: 0.63444245, z: 0.6508312, w: -0.3122223}
+            - m_PreQ: {x: 0.27423605, y: 0.62035125, z: 0.568435, w: -0.46566153}
+              m_PostQ: {x: 0.27643943, y: 0.6344425, z: 0.6508312, w: -0.3122223}
               m_Sgn: {x: -1, y: -1, z: 1}
               m_Limit:
                 m_Min: {x: 0, y: -0.43633232, z: -0.34906584}
@@ -8769,7 +9168,7 @@ Avatar:
                 m_Max: {x: 0, y: 0.34906584, z: 0.87266463}
               m_Length: 0.021166317
               m_Type: 1
-            - m_PreQ: {x: 0.01934008, y: 0.055275224, z: 0.32968864, w: -0.9422719}
+            - m_PreQ: {x: 0.01934008, y: 0.055275217, z: 0.32968864, w: -0.94227177}
               m_PostQ: {x: -0.0010438863, y: -0.05855167, z: -0.017795037, w: 0.9981252}
               m_Sgn: {x: 1, y: 1, z: 1}
               m_Limit:
@@ -8777,7 +9176,7 @@ Avatar:
                 m_Max: {x: 0, y: 0, z: 0.7853982}
               m_Length: 0.013025059
               m_Type: 1
-            - m_PreQ: {x: 0.019340081, y: 0.05527523, z: 0.32968864, w: -0.9422719}
+            - m_PreQ: {x: 0.019340081, y: 0.055275224, z: 0.32968864, w: -0.94227177}
               m_PostQ: {x: -0.0010438863, y: -0.058551677, z: -0.017795037, w: 0.9981252}
               m_Sgn: {x: 1, y: 1, z: 1}
               m_Limit:
@@ -8810,7 +9209,7 @@ Avatar:
               m_Length: 0.006496167
               m_Type: 1
             - m_PreQ: {x: 0.009077836, y: 0.068830974, z: 0.3059894, w: -0.94950014}
-              m_PostQ: {x: -0.00063947274, y: -0.03213479, z: -0.019885482, w: 0.99928546}
+              m_PostQ: {x: -0.00063947274, y: -0.032134794, z: -0.019885482, w: 0.9992856}
               m_Sgn: {x: 1, y: -1, z: 1}
               m_Limit:
                 m_Min: {x: 0, y: -0.1308997, z: -0.87266463}
@@ -8873,7 +9272,7 @@ Avatar:
                 m_Max: {x: 0, y: 0, z: 0.61086524}
               m_Length: 0.019048018
               m_Type: 1
-            - m_PreQ: {x: 0.6899422, y: 0.1191557, z: 0.15485388, w: -0.69699496}
+            - m_PreQ: {x: 0.6899422, y: 0.11915569, z: 0.15485388, w: -0.6969949}
               m_PostQ: {x: -0.64617467, y: -0.25353372, z: -0.28715554, w: 0.6600914}
               m_Sgn: {x: 1, y: 1, z: -1}
               m_Limit:
@@ -10612,406 +11011,7 @@ Avatar:
     m_HasTranslationDoF: 0
     m_HasExtraRoot: 0
     m_SkeletonHasParents: 0
---- !u!114 &2146317968991480508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 976e99d37c093ce4c9b249c81c2cbdd5, type: 3}
-  m_Name: AvatarDescription
-  m_EditorClassIdentifier: 
-  armStretch: 0.05
-  legStretch: 0.05
-  upperArmTwist: 0.5
-  lowerArmTwist: 0.5
-  upperLegTwist: 0.5
-  lowerLegTwist: 0.5
-  feetSpacing: 0
-  hasTranslationDoF: 0
-  human:
-  - humanBone: 0
-    boneName: J_Bip_C_Hips
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 1
-    boneName: J_Bip_L_UpperLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 2
-    boneName: J_Bip_R_UpperLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 3
-    boneName: J_Bip_L_LowerLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 4
-    boneName: J_Bip_R_LowerLeg
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 5
-    boneName: J_Bip_L_Foot
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 6
-    boneName: J_Bip_R_Foot
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 7
-    boneName: J_Bip_C_Spine
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 8
-    boneName: J_Bip_C_Chest
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 9
-    boneName: J_Bip_C_Neck
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 10
-    boneName: J_Bip_C_Head
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 11
-    boneName: J_Bip_L_Shoulder
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 12
-    boneName: J_Bip_R_Shoulder
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 13
-    boneName: J_Bip_L_UpperArm
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 14
-    boneName: J_Bip_R_UpperArm
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 15
-    boneName: J_Bip_L_LowerArm
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 16
-    boneName: J_Bip_R_LowerArm
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 17
-    boneName: J_Bip_L_Hand
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 18
-    boneName: J_Bip_R_Hand
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 19
-    boneName: J_Bip_L_ToeBase
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 20
-    boneName: J_Bip_R_ToeBase
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 21
-    boneName: J_Adj_L_FaceEye
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 22
-    boneName: J_Adj_R_FaceEye
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 24
-    boneName: J_Bip_L_Thumb1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 25
-    boneName: J_Bip_L_Thumb2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 26
-    boneName: J_Bip_L_Thumb3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 27
-    boneName: J_Bip_L_Index1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 28
-    boneName: J_Bip_L_Index2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 29
-    boneName: J_Bip_L_Index3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 30
-    boneName: J_Bip_L_Middle1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 31
-    boneName: J_Bip_L_Middle2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 32
-    boneName: J_Bip_L_Middle3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 33
-    boneName: J_Bip_L_Ring1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 34
-    boneName: J_Bip_L_Ring2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 35
-    boneName: J_Bip_L_Ring3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 36
-    boneName: J_Bip_L_Little1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 37
-    boneName: J_Bip_L_Little2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 38
-    boneName: J_Bip_L_Little3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 39
-    boneName: J_Bip_R_Thumb1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 40
-    boneName: J_Bip_R_Thumb2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 41
-    boneName: J_Bip_R_Thumb3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 42
-    boneName: J_Bip_R_Index1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 43
-    boneName: J_Bip_R_Index2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 44
-    boneName: J_Bip_R_Index3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 45
-    boneName: J_Bip_R_Middle1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 46
-    boneName: J_Bip_R_Middle2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 47
-    boneName: J_Bip_R_Middle3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 48
-    boneName: J_Bip_R_Ring1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 49
-    boneName: J_Bip_R_Ring2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 50
-    boneName: J_Bip_R_Ring3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 51
-    boneName: J_Bip_R_Little1
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 52
-    boneName: J_Bip_R_Little2
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 53
-    boneName: J_Bip_R_Little3
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
-  - humanBone: 54
-    boneName: J_Bip_C_UpperChest
-    useDefaultValues: 1
-    min: {x: 0, y: 0, z: 0}
-    max: {x: 0, y: 0, z: 0}
-    center: {x: 0, y: 0, z: 0}
-    axisLength: 0
---- !u!114 &7105940157569536702
+--- !u!114 &7241035946522478677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
