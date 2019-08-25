@@ -24,6 +24,9 @@ public class GirlMove : MonoBehaviour
 
     System.Random crandom = new System.Random();
     int r,garbr;
+
+    float time = 0f;
+    int timer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +46,13 @@ public class GirlMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q)) { GoSit(); Grab(); }
+        time += Time.deltaTime; 
+        timer = (int)time;
+        if (timer==5) {
+            GoSit(); Grab();
+            time = 0f;
+            timer = 0;
+        }
         print(isSit);
         if (isWait == false && isSit == false)
         {
