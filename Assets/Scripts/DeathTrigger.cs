@@ -21,7 +21,7 @@ public class DeathTrigger : MonoBehaviour
     }
 
     IEnumerator Kill(Collider other) {
-        yield return new WaitForSeconds(3f);
-        Destroy(other);
+        yield return new WaitForSeconds(2f);
+        Destroy(other.gameObject);
     }
 }

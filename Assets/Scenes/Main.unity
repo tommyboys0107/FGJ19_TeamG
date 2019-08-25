@@ -912,6 +912,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: b038f09afb66c4046899847786de6999, type: 2}
+    - target: {fileID: 5949666476069211291, guid: 7987c229ecfc428428bbeb30aba2938e,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949666476069211291, guid: 7987c229ecfc428428bbeb30aba2938e,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 934587665493537010, guid: 7987c229ecfc428428bbeb30aba2938e,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -6403,6 +6413,72 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1637696681
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637696685}
+  - component: {fileID: 1637696684}
+  - component: {fileID: 1637696683}
+  - component: {fileID: 1637696682}
+  m_Layer: 0
+  m_Name: Death
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1637696682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637696681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bbbbed04d3c85442831e3694db88c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1637696683
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637696681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100, y: 50, z: 300}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &1637696684
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637696681}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1637696685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637696681}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.322876, y: -24.8, z: 0.90625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686365041 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5949666476069211282, guid: 7987c229ecfc428428bbeb30aba2938e,
@@ -7298,6 +7374,16 @@ PrefabInstance:
       propertyPath: cameraHolder
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 73446191510723505, guid: c2604e77d3c4f844c854019be6db658d,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 73446191510723505, guid: c2604e77d3c4f844c854019be6db658d,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6876374619201857496, guid: c2604e77d3c4f844c854019be6db658d,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -7830,6 +7916,16 @@ PrefabInstance:
     - target: {fileID: 5949666476069211288, guid: 7987c229ecfc428428bbeb30aba2938e,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949666476069211291, guid: 7987c229ecfc428428bbeb30aba2938e,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949666476069211291, guid: 7987c229ecfc428428bbeb30aba2938e,
+        type: 3}
+      propertyPath: m_Drag
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 934587665493537010, guid: 7987c229ecfc428428bbeb30aba2938e,
@@ -9121,6 +9217,16 @@ PrefabInstance:
     - target: {fileID: 5391076206794487320, guid: f62708b339864df47b8486991f2d6c52,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391076206794487323, guid: f62708b339864df47b8486991f2d6c52,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: Infinity
+      objectReference: {fileID: 0}
+    - target: {fileID: 5391076206794487323, guid: f62708b339864df47b8486991f2d6c52,
+        type: 3}
+      propertyPath: m_Drag
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493461814922988146, guid: f62708b339864df47b8486991f2d6c52,
